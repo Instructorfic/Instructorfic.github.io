@@ -3,44 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseños comunes en  android</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <title>Diseños comunes en android</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f4f4f4;
-        }
-        #content {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /*background-color: #f4f4f4;*/
         }
     </style>
 </head>
 <body>
 
    
-    <div id="content">Cargando contenido...</div>
+    <github-md># Diseños(layouts) comunes en android
+## Linear layout
+Un diseño que ordena las vistas (elementos de diseño) horizontalmente en una sola columna o verticalmente en una sola fila.
 
-    <script>
-        fetch('AndroidLayouts.md')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error al cargar el archivo Markdown.');
-                }
-                return response.text();
-            })
-            .then(markdownText => {
-                const htmlContent = marked(markdownText);
-                document.getElementById('content').innerHTML = htmlContent;
-            })
-            .catch(error => {
-                document.getElementById('content').innerHTML = error.message;
-            });
-    </script>
+#### Atributos principales
+
+| Atributo | Valor | Finalidad
+|-------------|--------------------------| ---------------------------------------|
+|  `android:orientation ` |  `vertical, horzontal`  |Establecer la dirección en la que se organizan los elementos. |
+|  `android:gravity ` |  `top, bottom,left,right,center,center_horizontal, center_vertical`  |Define cómo se alinean los elementos hijos dentro de **Linear Layout**.|
+|  `android:padding ` | Puede ser un valor en **dp** o especificar diferentes valores para cada lado`android:paddingTop, android:paddingBottom, android:paddingLeft, android:paddingRight`  |Define el espacio interior entre el borde del **Linear Layout** y su contenido.|
+|  `android:margin ` |  Similar a **padding**, se puede definir con un solo valor o valores específicos para cada lado.`  |Define el espacio exterior entre el **Linear Layout** y su contenido.|
+
+
+
+## Relative layout
+Es un grupo de vistas(view group) que muestra vistas secundarias en posiciones relativas. La posición de cada vista puede especificarse como relativa a elementos del mismo nivel (como a la izquierda de otra vista o por debaje de ella) o en posiciones relativas al área superior (como alineada a la parte inferior, izquierda o central).
+
+#### Atributos principales
+
+| Atributo | Valor | Finalidad
+|-------------|--------------------------| ---------------------------------------|
+|  `android:layout_alignParentTop ` |  `true o false`  |Alinea la vista al borde superior del contenedor padre. |
+|  `android:layout_alignParentBottom ` |  `true o false` |Alinea la vista al borde inferior del contenedor padre.|
+|  `android:layout_alignParentStart ` |  `true o false` |Alinea la vista al borde izquierdo del contenedor padre (o inicio en idiomas con texto de derecha a izquierda).|
+|  `android:layout_alignParentEnd ` |   `true o false`  |Alinea la vista al borde derecho del contenedor padre (o final en idiomas con texto de derecha a izquierda).|
+|  `android:layout_centerHorizontal ` |  `true o false`  |Centra la vista horizontalmente dentro del contenedor padre. |
+|  `android:layout_centerVertical ` |  `true o false` |Centra la vista verticalmente dentro del contenedor padre.|
+|  `android:layout_centerInParent ` |  `true o false` |Centra la vista tanto horizontal como verticalmente dentro del contenedor padre.|
+|  `android:layout_below ` |  Referencia mediante el id de otro elemento. Por ejemplo `@id/elemento` |Coloca el elemento(vista) debajo de otro elemento(vista) especificado.|
+|  `android:layout_above ` |  Referencia mediante el id de otro elemento. Por ejemplo `@id/elemento` |Coloca el elemento(vista) encima de otro elemento(vista) especificado.|
+|  `android:layout_toStartOf ` |  Referencia mediante el id de otro elemento. Por ejemplo `@id/elemento` |Coloca el elemento(vista) a la izquierda de otro elemento(vista) especificado.|
+|  `android:layout_toEndOf ` |  Referencia mediante el id de otro elemento. Por ejemplo `@id/elemento` |Coloca el elemento(vista) a la derecha de otro elemento(vista) especificado.|
+
+
+
+
+
+## Constraint layout
+Constraint Layout te permite crear diseños grandes y complejos con una jerarquía de vistas plana, sin grupos de vistas anidadas. Es similar a **Relative Layout** en el sentido de que todas las vistas se presentan de acuerdo con las relaciones entre las vistas del mismo nivel y el diseño de nivel superior, pero es más flexible que RelativeLayout y más fácil de usar con el editor de diseño de android studio.
+
+#### Atributos principales
+
+| Atributo | Valor | Finalidad
+|-------------|--------------------------| ---------------------------------------|
+|  `app:layout_constraintStart_toStartOf ` |  Referencia mediante el id de otro elemento. Por ejemplo `@id/elemento` o  `parent`. |Establece una restricción para alinear el inicio de la vista con el inicio de otra vista o del contenedor padre. |
+|  `app:layout_constraintEnd_toEndOf ` |  Referencia mediante el id de otro elemento. Por ejemplo `@id/elemento` o  `parent`. |Establece una restricción para alinear el final de la vista con el final de otra vista o del contenedor padre. |
+|  `app:layout_constraintTop_toTopOf ` |  Referencia mediante el id de otro elemento. Por ejemplo `@id/elemento` o  `parent`. |Alinea la parte superior de la vista con la parte superior de otra vista o del contenedor padre. |
+|  `app:layout_constraintBottom_toBottomOf ` |  Referencia mediante el id de otro elemento. Por ejemplo `@id/elemento` o  `parent`. |Alinea la parte inferior de la vista con la parte inferior de otra vista o del contenedor padre. |
+
+
+    </github-md>
+
+    <script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Markdown-Tag/markdown-tag.js"></script> 
 
 </body>
 </html>
