@@ -1,1 +1,83 @@
-Hello World
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material de apoyo</title>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .category {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007BFF;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Guías de apoyo</h1>
+    <md-block src="AndroidLayouts.md">
+    </md-block>
+
+
+    <div class="category">
+        <h2>Desarrollo Móvil</h2>
+        <ul>
+            <li><a href="AndroidLayouts.html" target="">Diseños android</a></li>
+            <li><a href="manuales/javascript/funciones.html">Funciones en JavaScript</a></li>
+            <li><a href="manuales/javascript/eventos.html">Manejo de Eventos</a></li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h2>Herramientas para programación</h2>
+        <ul>
+            <li><a href="manuales/python/intro.html">Sistemas de control de versiones</a>
+                <ul><a href="manuales/python/intro.html">Comandos básicos de git</a></ul>
+            </li>
+            <li><a href="manuales/python/funciones.html">Funciones en Python</a></li>
+            <li><a href="manuales/python/librerias.html">Uso de Librerías</a></li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h2>Lógica de programación y pensamiento computacional</h2>
+        <ul>
+            <li><a href="manuales/html/intro.html">Introducción a HTML</a></li>
+            <li><a href="manuales/css/estilos.html">Estilos en CSS</a></li>
+            <li><a href="manuales/css/maquetacion.html">Maquetación con CSS</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
