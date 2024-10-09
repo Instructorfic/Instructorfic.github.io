@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseños de android</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 
     <style>
         body {
@@ -21,26 +21,6 @@
     </style>
 </head>
 <body>
-
-   
-    <div id="content">Cargando contenido...</div>
-
-    <script>
-        fetch('./AndroidLayouts.md')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error al cargar el archivo Markdown.');
-                }
-                return response.text();
-            })
-            .then(markdownText => {
-                const htmlContent = marked(markdownText);
-                document.getElementById('content').innerHTML = htmlContent;
-            })
-            .catch(error => {
-                document.getElementById('content').innerHTML = error.message;
-            });
-    </script>
-
+    <md-block src="AndroidLayouts.md"></md-block>
 </body>
 </html>
